@@ -57,13 +57,21 @@
 (require 'ido)
 (ido-mode t)
 (ido-everywhere t)
-(setq ido-auto-merge-work-directories-length -1)
+(setq ido-auto-merge-work-directories-length -1
+      ido-enable-flex-matching t
+      ido-use-faces nil)
 
 (require 'ido-ubiquitous)
 (ido-ubiquitous-mode 1)
 
 (require 'smex)
 (smex-initialize)
+(require 'flx-ido)
+(flx-ido-mode 1)
+(ido-grid-mode 1)
+(setq ido-grid-mode-first-line nil
+      ido-grid-mode-max-rows 3
+      ido-grid-mode-min-rows 3)
 
 (require 'saveplace)
 (setq-default save-place t)
@@ -96,6 +104,9 @@
   (error (substitute-command-keys "To exit emacs: \\[kill-emacs]")))
 (global-set-key "\C-x\C-c" 'dont-kill-emacs)
 
+(package-initialize)
+(elpy-enable)
+
 ;;;;;;;;;;;;;;;
 ;; Shortcuts ;;
 ;;;;;;;;;;;;;;;
@@ -121,5 +132,3 @@
 (load-file "~/.emacs.d/init-appearance.el")
 (load-file "~/.emacs.d/init-cpp.el")
 (load-file "~/.emacs.d/init-gnu-global.el")
-(load-file "~/.emacs.d/init-paredit.el")
-

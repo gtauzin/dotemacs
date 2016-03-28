@@ -4,9 +4,7 @@
 (package-initialize)
 
 (defvar my-packages '(
-                      cider
                       clang-format
-                      clojure-mode
                       cmake-font-lock
                       csv-mode
                       exec-path-from-shell
@@ -15,16 +13,18 @@
                       flycheck-clojure
                       ggtags
                       ido-ubiquitous
+		      flx-ido
+		      ido-grid-mode
                       magit
                       markdown-mode
                       monokai-theme
-                      paredit
                       scss-mode
                       smartparens
                       smex
                       solarized-theme
                       yaml-mode
                       zenburn-theme
+                      elpy
                       ))
 
 (dolist (p my-packages)
