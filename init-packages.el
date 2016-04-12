@@ -1,6 +1,7 @@
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
 (defvar my-packages '(
@@ -10,7 +11,6 @@
                       exec-path-from-shell
                       expand-region
                       flycheck
-                      flycheck-clojure
                       ggtags
                       ido-ubiquitous
 		      flx-ido
@@ -25,6 +25,11 @@
                       yaml-mode
                       zenburn-theme
                       elpy
+                      company
+                      irony
+                      irony-eldoc
+                      flycheck-irony
+                      company-irony
                       ))
 
 (dolist (p my-packages)

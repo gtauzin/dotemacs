@@ -125,6 +125,9 @@
 (global-set-key [C-M-tab] 'clang-format-region)
 (global-set-key [f11] 'toggle-frame-fullscreen)
 (global-unset-key (kbd "C-z"))
+(eval-after-load "elpy"
+  '(cl-dolist (key '("M-<up>" "M-<down>" "M-<left>" "M-<right>"))
+     (define-key elpy-mode-map (kbd key) nil)))
 
 ;;;;;;;;;;;;;;
 ;; Includes ;;
